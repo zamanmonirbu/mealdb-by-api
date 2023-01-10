@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>api problem</title>
+</head>
+<body>
+    <h1>Hello</h1>
+    <div id="contentView">
+
+    </div>
+<label for="">Searh here anything: </label>
+<input type="text" placeholder="Search  here" id="input">
+<button id="btn" onclick="searchResult()">Search</button>
+
+    <script>
+        fetch("https://www.themealdb.com/api/json/v1/1/search.php?f=a")
+        .then(req=>req.json())
+        .then(data=>viewData(data.meals));
+
+        const contentView=document.getElementById('contentView');
+        const viewData=foodb=>{
+        foodb.forEach(foodb=>{
+            console.log(foodb.strMeal);
+            const newDiv=document.createElement('div');
+            newDiv.className='foodName';
+            contentView.innerHTML=`<h1>${"Food Name is",foodb.strMeal}</h1>`;
+            contentView.appendChild(newDiv);
+            // console.log(category.strMeal); 
+            
+        });}
+    
+
+
+
+    // const searchResult=foodName=>{
+    // fetch("www.themealdb.com/api/json/v1/1/search.php?s=${foodName}")
+    // .then(req=>req.json())
+    // .then(data=>viewData(data.categories));
+
+    // const viewData=categories=>{
+    //     categories.forEach(category=>{
+    //         console.log(category.idCategory); 
+    //     });}
+    // }
+
+
+    </script>
+
+    <script src="js.js" >  </script>
+</body>
+</html>
+
+
+<!-- countries.forEach(country => {
+         
+    console.log(country.name);
+  
+}); -->

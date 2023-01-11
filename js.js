@@ -1,10 +1,17 @@
-// fetch('https://restcountries.com/v2/all')
-// .then(req=>req.json())
-// .then(data=>displayCountries(data));
-//     const displayCountries=countries=>{
-//             countries.forEach(country => {
-         
-//             console.log(country.name);
-          
-//         });
-//     }
+fetch("https://www.themealdb.com/api/json/v1/1/search.php?f=b")
+.then(req=>req.json())
+.then(data=>viewData(data.meals));
+
+const contentView=document.getElementById('contentView');
+const viewData=foodb=>{
+foodb.forEach(foodb=>{
+    console.log("food Name",foodb.strMeal,"Photo Name:",foodb.strMealThumb);
+    const newDiv=document.createElement('div');
+    newDiv.className='foodName';
+    newDiv.innerHTML=`<h1>${"Food Name is",foodb.strMeal}</h1>
+    <img src="${foodb.strMealThumb}">
+    `;
+    contentView.appendChild(newDiv);
+    // console.log(category.strMeal); 
+    
+});}

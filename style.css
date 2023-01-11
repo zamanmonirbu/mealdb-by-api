@@ -1,0 +1,13 @@
+img{
+    height: 100px;
+    width: 100px;
+}
+.foodName{
+    border: 5px solid grey;
+    text-align: center;
+    width: 25%;
+    margin: 2%;
+    border-radius: 5px;
+    float: left;
+    height: 300px;
+}

@@ -13,19 +13,11 @@
     <input type="text" placeholder="Search here" id="input">
     <button id="btn" onclick="searchResult()">Search</button>
     </div>
+    <div id="searchContent">
+        
+    </div>
     <div id="contentView">
     </div>
-
-<script>
-    
-    const searchResult=data=>{
-        const input=document.getElementById('input').value;
-        fetch('www.themealdb.com/api/json/v1/1/search.php?s=${input}')
-        .then(req=>req.json())
-        .then(data=>console.log(data.meals))
-    }
-
-</script>
     
     <script src="js.js" >  </script>
 </body>

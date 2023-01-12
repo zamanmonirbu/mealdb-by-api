@@ -5,7 +5,7 @@ fetch("https://www.themealdb.com/api/json/v1/1/search.php?f=b")
 const contentView=document.getElementById('contentView');
 const viewData=foodb=>{
 foodb.forEach(foodb=>{
-    console.log("food Name",foodb.strMeal,"Photo Name:",foodb.strMealThumb);
+   // console.log("food Name",foodb.strMeal,"Photo Name:",foodb.strMealThumb);
     const newDiv=document.createElement('div');
     newDiv.className='foodName';
     newDiv.innerHTML=`<h1>${"Food Name is",foodb.strMeal}</h1>
